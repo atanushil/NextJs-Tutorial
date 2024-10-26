@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
 import './styles.css'
+import { useState } from "react";
 const navLinks = [
     { name: "Register", link: "/register" },
     { name: "Login", link: "/login" },
@@ -11,8 +12,12 @@ const navLinks = [
 export default function AuthLayout ( { children }: { children: React.ReactNode; } )
 {
     const pathname = usePathname();
+    const [inputValue, setInputValue] = useState("");
     return (
         <div className="auth-layout">
+            <div className="bg-slate-500">
+                <input type="text" value={inputValue} name="" id="" onChange={(e)=>setInputValue(e.target.value)} />
+            </div>
             {
                 navLinks.map( ( link, index ) =>
                 {
