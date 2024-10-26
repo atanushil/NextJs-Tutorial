@@ -8,10 +8,10 @@ export default async function ReviewDetail ( { params, }: { params: { productId:
 {
     const { productId, reviewId } = await params;
     const random = getRandomInt( 2 );
-    if ( random == 1 )
-    {
-        throw new Error( "Error occured in  review detail page" );
-    }
+    // if ( random == 1 )
+    // {
+    //     throw new Error( "Error occured in  review detail page" );
+    // }
     if ( parseInt( reviewId ) > 100 )
     {
         notFound();
