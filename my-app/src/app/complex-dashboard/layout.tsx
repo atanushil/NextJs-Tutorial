@@ -1,7 +1,8 @@
 
 
 
-export default function Dashboardlayout ( { children,
+export default function Dashboardlayout ( {
+    children,
     users,
     revenue,
     notification,
