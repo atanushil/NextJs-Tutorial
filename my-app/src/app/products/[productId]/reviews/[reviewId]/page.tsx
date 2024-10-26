@@ -1,10 +1,10 @@
-
+// "use client"
 import { notFound } from "next/navigation";
 function getRandomInt ( count: number )
 {
     return Math.floor( Math.random() * count );
 }
-export default async function ReviewDetail ( { params, }: { params: { productId: string, reviewId: string; }; } )
+export default async function ReviewDetail ( { params, }: { params: { productId: string; reviewId: string; }; } )
 {
     const { productId, reviewId } = await params;
     const random = getRandomInt( 2 );
