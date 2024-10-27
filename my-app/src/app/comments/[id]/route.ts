@@ -21,3 +21,17 @@ export async function PATCH(
   comments[commentIndex].comment = comment;
   return Response.json(comments[commentIndex]);
 }
+
+export async function DELETE(
+  req: Request,
+  { params }: { params: { id: string } }
+) {
+  const { id } = params;
+  const commentIndex = comments.findIndex(
+    (comment) => comment.id === parseInt(id)
+  );
+
+  const deleteComment = comments[commentIndex];
+  comments.splice(commentIndex, 1);
+  return Response.json(deleteComment);
+}
