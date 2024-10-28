@@ -1,3 +1,4 @@
+import { NextRequest } from "next/server";
 import { comments } from "../data";
 
 export async function GET(

@@ -1,7 +1,15 @@
+import { NextRequest } from "next/server";
 import { comments } from "./data";
 
-export async function GET() {
-  return Response.json(comments);
+export async function GET(req:NextRequest) {
+  //NextRequest is a standard request api
+  const searchParams=req.nextUrl.searchParams;
+  const query=searchParams.get("query")
+  const filteredComments=query?
+  comments.filter(comment=>comment.comment.includes(query)):
+  comments;
+
+  return Response.json(filteredComments);
 }
 
 export async function POST(req: Request) {
@@ -19,3 +27,4 @@ export async function POST(req: Request) {
     status: 201,
   });
 }
+
