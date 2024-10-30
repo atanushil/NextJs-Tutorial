@@ -4,4 +4,4 @@ export default function Profile(){
             <h1>Profile from</h1>
         </div>
     )
-}
+};
